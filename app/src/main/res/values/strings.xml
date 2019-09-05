@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Subico</string>
+    <string name="don_t_have_account_sign_up_here">Don\'t have account? Sign Up Here</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="favorite">Favorite</string>
+    <string name="account">Account</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="item_image">item_image</string>
+    <string name="item_name">item_name</string>
+    <string name="item_price">item_price</string>
+    <string name="full_name">Full name</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="already_have_an_account_login_here">Already have an account? Login here</string>
+    <string name="cart">Cart</string>
+    <string name="transaction">Transaction</string>
+    <string name="imagecategory">imageCategory</string>
+    <string name="women">Women</string>
+    <string name="men">Men</string>
+    <string name="atk">ATK</string>
+    <string name="username">Username</string>
+    <string name="logout">Logout</string>
+    <string name="pilih_ukuran">Pilih Ukuran</string>
+    <string name="pilih_warna">Pilih Warna</string>
+    <string name="add_to_cart">add to cart</string>
+    <string name="image">image</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="_1">1</string>
+    <string name="nama_item">Nama item</string>
+    <string name="rp_1000000">Rp. 1000000</string>
+    <string name="remove_item">remove item</string>
+    <string name="checkout_rp_5_000_000">checkout : Rp. 5.000.000</string>
+    <string name="order_123983472">#Order 123983472</string>
+    <string name="status_on_process">Status : On Process</string>
+    <string name="re_type_password">Re-Type password</string>
+    <string name="deskripsi_produk">Deskripsi produk</string>
+    <string name="detailProduk">Detail Produk</string>
+    <string name="kategori">Kategori</string>
+</resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.HomeFragment.HomeFragment">
+    <!--<EditText-->
+        <!--android:id="@+id/searchViewHomeQuery"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Cari..."-->
+        <!--android:focusable="true"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:drawableStart="@drawable/ic_search"-->
+        <!--android:inputType="text"/>-->
+    <!--<androidx.core.widget.NestedScrollView-->
+        <!--android:layout_below="@id/searchViewHomeQuery"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/filterContainer"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<Button-->
+            <!--android:id="@+id/buttonHomeAll"-->
+            <!--style="@style/Widget.MaterialComponents.Button.TextButton"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="5dp"-->
+            <!--android:layout_marginEnd="5dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="Semua"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+            <!--android:textStyle="bold" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/buttonHomePria"-->
+            <!--style="@style/Widget.MaterialComponents.Button.TextButton"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="5dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="Pria"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+            <!--android:textColor="@color/grey" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/buttonHomeWanita"-->
+            <!--style="@style/Widget.MaterialComponents.Button.TextButton"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="5dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="Wanita"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+            <!--android:textColor="@color/grey" />-->
+
+
+    <!--</LinearLayout>-->
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            tools:listitem="@layout/item_list_main" />
+
+
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/progressHomeLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="BallPulseIndicator" />
+
+</RelativeLayout>

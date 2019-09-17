@@ -26,6 +26,7 @@ import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import web.id.azammukhtar.subico.MainMenuActivity;
 import web.id.azammukhtar.subico.Model.UserLogin.DataUser;
 import web.id.azammukhtar.subico.Model.UserLogin.User;
 import web.id.azammukhtar.subico.Network.ApiNetwork;
@@ -86,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(User user) {
                         SessionManager.getInstance().setLogin(true, user.getUser().getToken());
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
                         finish();
                         Log.d(TAG, "onSuccess: Login Berhasil " + user.getUser().getToken());
                     }

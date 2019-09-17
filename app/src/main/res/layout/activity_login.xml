@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/colorPrimary"
     tools:context=".UI.LoginActivity.LoginActivity">
     <LinearLayout
         android:id="@+id/logo_container"
@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="cursive"
             android:text="@string/app_name"
+            android:textColor="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     </LinearLayout>
@@ -39,20 +40,21 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/username">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtLoginUsername"
+                android:backgroundTint="#fff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
@@ -62,6 +64,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtLoginPassword"
                 android:layout_width="match_parent"
+                android:backgroundTint="#fff"
                 android:inputType="textPassword"
                 android:layout_height="wrap_content" />
 
@@ -71,10 +74,10 @@
             android:id="@+id/btnLoginProceed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_dark"
+            android:background="@color/colorAccent"
             android:layout_marginTop="30dp"
             android:text="@string/login"
-            android:textColor="@android:color/white" />
+            android:textColor="@color/colorPrimary" />
 
         <com.wang.avi.AVLoadingIndicatorView
             android:id="@+id/loaderLoginProgress"
@@ -94,6 +97,6 @@
         android:layout_centerHorizontal="true"
         android:padding="30dp"
         android:text="@string/don_t_have_account_sign_up_here"
-        android:textColor="@android:color/black" />
+        android:textColor="@color/white" />
 
 </RelativeLayout>

@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/colorPrimary"
     tools:context=".UI.SplashActivity">
 
-        <ImageView
-            android:id="@+id/logoSplash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerInParent="true"/>
+        <!--<ImageView-->
+            <!--android:id="@+id/logoSplash"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@mipmap/ic_launcher"-->
+            <!--android:layout_centerInParent="true"/>-->
 
         <TextView
-            android:layout_below="@+id/logoSplash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="cursive"
             android:layout_centerInParent="true"
+            android:textColor="@color/colorAccent"
             android:text="@string/app_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textSize="50sp"/>
 
     <com.wang.avi.AVLoadingIndicatorView
         android:layout_width="wrap_content"
@@ -29,6 +29,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/dimen_30"
-        app:indicatorColor="@color/colorPrimary"
+        app:indicatorColor="@color/colorAccent"
         app:indicatorName="BallPulseIndicator" />
 </RelativeLayout>

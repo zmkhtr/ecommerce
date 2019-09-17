@@ -26,11 +26,13 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import web.id.azammukhtar.subico.Adapter.CartFragmentAdapter;
+import web.id.azammukhtar.subico.CheckoutActivity;
 import web.id.azammukhtar.subico.Model.Cart.Cart;
 import web.id.azammukhtar.subico.Model.Cart.Cartproduct;
 import web.id.azammukhtar.subico.Model.Cart.Datum;
@@ -122,7 +124,13 @@ public class CartFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             }
         });
     }
-    
+
+    @OnClick(R.id.buttonCheckOut)
+    void checkOut(){
+        startActivity(new Intent(getContext(), CheckoutActivity.class));
+        getActivity().finish();
+    }
+
     private void deleteCart(String id){
         Call<Cartproduct> call = ApiNetwork.getApiInterface().deleteCart("Bearer " + SessionManager.getInstance().getUserToken(), id);
         call.enqueue(new Callback<Cartproduct>() {

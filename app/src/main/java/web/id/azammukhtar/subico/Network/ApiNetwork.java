@@ -52,6 +52,6 @@ public class ApiNetwork {
     public static boolean isNetworkConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
+        return (cm != null ? cm.getActiveNetworkInfo() : null) != null && cm.getActiveNetworkInfo().isConnected();
     }
 }

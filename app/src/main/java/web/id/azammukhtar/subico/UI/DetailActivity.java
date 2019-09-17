@@ -9,11 +9,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -47,7 +50,8 @@ import static web.id.azammukhtar.subico.UI.MainActivity.MainActivity.ID_PRODUCT;
 
 public class DetailActivity extends AppCompatActivity {
     private static final String TAG = "DetailActivity";
-
+    private String DETAIL_CODE;
+    public static final String RENT_CODE = "RENT";
     private int value = 1;
 
     private TextView textNamaItem, textHargaItem;
@@ -75,6 +79,12 @@ public class DetailActivity extends AppCompatActivity {
     @BindView(R.id.buttonDetailFavorite)
     ImageView logoFavorite;
 
+    @BindView(R.id.dropdownDetailHari)
+    AppCompatAutoCompleteTextView mDurasi;
+
+    @BindView(R.id.textInputDetailHari)
+    TextInputLayout textInputLayout;
+
     private Context context;
     private SliderAdapter sliderAdapter;
     private Intent intent;
@@ -87,6 +97,9 @@ public class DetailActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         intent = getIntent();
+        DETAIL_CODE = intent.getStringExtra(RENT_CODE);
+        Log.d(TAG, "onCreate: " + DETAIL_CODE);
+
 
         boolean status = intent.getBooleanExtra(FAVORITE_STATUS, false);
         if (status){
@@ -102,8 +115,12 @@ public class DetailActivity extends AppCompatActivity {
         sliderView.setSliderAdapter(sliderAdapter);
         findId();
         getData();
-    }
 
+        if (DETAIL_CODE != null && DETAIL_CODE.equals("RENT")) {
+            mDurasi.setVisibility(View.VISIBLE);
+            textInputLayout.setVisibility(View.VISIBLE);
+        }
+    }
 
     private void findId() {
         textNamaItem = findViewById(R.id.textDetailNama);
@@ -130,6 +147,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void setData(ProductDetail productDetail) {
+
         mProductDetail = productDetail;
         //set text
         textNamaItem.setText(productDetail.getProduct().getName());
@@ -159,6 +177,19 @@ public class DetailActivity extends AppCompatActivity {
         mUkuran.setText(sizeList.get(0));
         mUkuran.setAdapter(adapterSize);
 
+        List<String> listDurasi = new ArrayList<>();
+        listDurasi.add("1 Hari");
+        listDurasi.add("2 Hari");
+        listDurasi.add("3 Hari");
+        listDurasi.add("4 Hari");
+        ArrayAdapter<String> adapterDurasi =
+                new ArrayAdapter<>(
+                        getBaseContext(),
+                        R.layout.dropdown_item,
+                        listDurasi);
+
+        mDurasi.setText(listDurasi.get(0));
+        mDurasi.setAdapter(adapterDurasi);
         //set slide
         sliderAdapter.setImageUrl(productDetail.getProduct().getImages());
         sliderAdapter.notifyDataSetChanged();

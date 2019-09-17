@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -63,11 +64,14 @@ public class HomeWanitaFragment extends Fragment {
     private RecyclerView recyclerView;
     private Context context;
 
+    @BindView(R.id.textFavoriteTitle)
+    TextView textTitle;
+
     @Override
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d("Frag : ", "home");
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_favorite, container, false);
     }
 
     @Override
@@ -76,8 +80,10 @@ public class HomeWanitaFragment extends Fragment {
 
         unbinder = ButterKnife.bind(this, view);
         pagination = PublishProcessor.create();
-        recyclerView = view.findViewById(R.id.recyclerViewHome);
+        recyclerView = view.findViewById(R.id.recyclerViewFavorite);
         homeFragmentAdapter = new HomeFragmentAdapter(getContext());
+
+        textTitle.setText("Woman");
 
         Log.d(TAG, "onViewCreated: " + productModels);
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);

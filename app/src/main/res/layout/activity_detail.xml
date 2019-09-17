@@ -111,6 +111,26 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputDetailHari"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:visibility="gone"
+                app:endIconMode="dropdown_menu">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/dropdownDetailHari"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:hint="Durasi Sewa"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -172,7 +192,7 @@
         android:id="@+id/buttonDetailAddToCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/colorAccent"
         android:text="@string/add_to_cart"
-        android:textColor="@color/white"/>
+        android:textColor="@color/colorPrimary"/>
 </LinearLayout>

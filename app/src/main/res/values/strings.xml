@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Subico</string>
+    <string name="app_name">Bestari</string>
     <string name="don_t_have_account_sign_up_here">Don\'t have account? Sign Up Here</string>
     <string name="home">Home</string>
     <string name="history">History</string>
@@ -42,4 +42,29 @@
     <string name="deskripsi_produk">Deskripsi produk</string>
     <string name="detailProduk">Detail Produk</string>
     <string name="kategori">Kategori</string>
+    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="search_product">Search Product</string>
+
+    <string name="promo">Promo</string>
+    <string name="categories">Categories</string>
+    <string name="new_product">New Product</string>
+    <string name="sell">Sell</string>
+    <string name="rent">Rent</string>
+    <string name="pre_order">Pre-Order</string>
+    <string name="sub_categories">Sub-Categories</string>
+    <string name="nomor_hp">Nomor HP</string>
+    <string name="transfer_ke">Transfer Ke</string>
 </resources>

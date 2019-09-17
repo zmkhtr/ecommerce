@@ -84,7 +84,6 @@ public class AccountFragment extends Fragment {
     }
 
     private void getDetail(){
-
         Log.d(TAG, "onSuccess: kk 1 ");
         Single<Profile> call = ApiNetwork.getApiInterface().getProfileDetail("Bearer " + SessionManager.getInstance().getUserToken());
         call.subscribeOn(Schedulers.io())

@@ -147,11 +147,11 @@ public class MainActivity extends AppCompatActivity {
                         active = favoriteFragment;
                         getSupportActionBar().setTitle("Favorite");
                         return true;
-                    case R.id.item_cart:
-                        fm.beginTransaction().hide(active).show(cartFragment).commit();
-                        active = cartFragment;
-                        getSupportActionBar().setTitle("Cart");
-                        return true;
+//                    case R.id.item_cart:
+//                        fm.beginTransaction().hide(active).show(cartFragment).commit();
+//                        active = cartFragment;
+//                        getSupportActionBar().setTitle("Cart");
+//                        return true;
                     case R.id.item_transaction:
                         fm.beginTransaction().hide(active).show(transactionFragment).commit();
                         active = transactionFragment;

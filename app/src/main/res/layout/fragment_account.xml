@@ -5,7 +5,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".UI.AccountFragment.AccountFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/view"
+        android:background="@color/colorPrimary"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:text="@string/account"
+        android:textColor="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="center"/>
+    </RelativeLayout>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

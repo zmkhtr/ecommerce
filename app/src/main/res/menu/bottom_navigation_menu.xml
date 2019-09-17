@@ -12,11 +12,11 @@
         android:icon="@drawable/ic_favorite"
         android:title="@string/favorite"
         app:showAsAction="ifRoom|withText" />
-    <item
-        android:id="@+id/item_cart"
-        android:icon="@drawable/ic_shopping_cart"
-        android:title="@string/cart"
-        app:showAsAction="ifRoom|withText" />
+    <!--<item-->
+        <!--android:id="@+id/item_cart"-->
+        <!--android:icon="@drawable/ic_shopping_cart"-->
+        <!--android:title="@string/cart"-->
+        <!--app:showAsAction="ifRoom|withText" />-->
     <item
         android:id="@+id/item_transaction"
         android:icon="@drawable/ic_account_balance_wallet"

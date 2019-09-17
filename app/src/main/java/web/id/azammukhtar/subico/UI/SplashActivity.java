@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
+import web.id.azammukhtar.subico.MainMenuActivity;
 import web.id.azammukhtar.subico.R;
 import web.id.azammukhtar.subico.UI.LoginActivity.LoginActivity;
 import web.id.azammukhtar.subico.UI.MainActivity.MainActivity;
@@ -33,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
     public void checkSession() {
         if (SessionManager.getInstance().isLoggedIn()) {
             new Handler().postDelayed(() -> {
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                startActivity(new Intent(SplashActivity.this, MainMenuActivity.class));
                 finish();
             }, 2000);
         } else {

@@ -10,15 +10,19 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import web.id.azammukhtar.subico.Model.Cart.Cart;
 import web.id.azammukhtar.subico.Model.Cart.Cartproduct;
+import web.id.azammukhtar.subico.Model.Category.Category;
 import web.id.azammukhtar.subico.Model.Favorite.Favorite;
 import web.id.azammukhtar.subico.Model.Product.Product;
 import web.id.azammukhtar.subico.Model.ProductDetail.ProductDetail;
 import web.id.azammukhtar.subico.Model.Profile.Profile;
+import web.id.azammukhtar.subico.Model.SubCategory.SubCat;
+import web.id.azammukhtar.subico.Model.SubCategory.SubCategory;
 import web.id.azammukhtar.subico.Model.UserLogin.User;
 
 public interface ApiInterface {
@@ -90,8 +94,12 @@ public interface ApiInterface {
                             @Field("password") String password,
                             @Field("c_password") String RePassword);
 
-
     @GET("profile")
     Single<Profile> getProfileDetail(@Header("Authorization") String token);
 
+    @GET("category/product")
+    Call<Category> getCategory(@Header("Authorization") String token);
+
+    @GET("product/subcategory/{id}")
+    Call<SubCat> getSubCategory(@Header("Authorization") String token, @Path("id") int number);
 }

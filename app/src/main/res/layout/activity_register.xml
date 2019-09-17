@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/red"
     tools:context=".UI.Register.RegisterActivity">
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/loaderRegisterProgress"
@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="cursive"
             android:text="@string/app_name"
+            android:textColor="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     </LinearLayout>
@@ -45,7 +46,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/full_name">
@@ -53,12 +54,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtRegisterFullName"
                 android:layout_width="match_parent"
+                android:backgroundTint="@color/white"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/username">
@@ -66,12 +68,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtRegisterUserName"
                 android:layout_width="match_parent"
+                android:backgroundTint="@color/white"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/e_mail">
@@ -79,12 +82,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtRegisterEmail"
                 android:layout_width="match_parent"
+                android:backgroundTint="@color/white"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
@@ -95,12 +99,13 @@
                 android:id="@+id/edtRegisterPassword"
                 android:layout_width="match_parent"
                 android:inputType="textPassword"
+                android:backgroundTint="@color/white"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/re_type_password"
@@ -111,6 +116,7 @@
                 android:id="@+id/edtRegisterRePassword"
                 android:layout_width="match_parent"
                 android:inputType="textPassword"
+                android:backgroundTint="@color/white"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -119,10 +125,10 @@
             android:id="@+id/btnRegisterProceed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_dark"
+            android:background="@color/colorAccent"
             android:layout_marginTop="30dp"
             android:text="@string/register"
-            android:textColor="@android:color/white" />
+            android:textColor="@color/colorPrimary" />
 
 
     </LinearLayout>
@@ -135,6 +141,6 @@
         android:layout_centerHorizontal="true"
         android:padding="30dp"
         android:text="@string/already_have_an_account_login_here"
-        android:textColor="@android:color/black" />
+        android:textColor="@color/white" />
 
 </RelativeLayout>

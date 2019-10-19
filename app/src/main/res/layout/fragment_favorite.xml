@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.FavoriteFragment.FavoriteFragment">
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/view"
+        android:background="@color/colorPrimary"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:text="@string/nav_favorite"
+        android:textColor="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/textFavoriteEmptyItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/have_not_added_favorite"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_below="@id/view"
+        android:id="@+id/swipeRefreshFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</RelativeLayout>

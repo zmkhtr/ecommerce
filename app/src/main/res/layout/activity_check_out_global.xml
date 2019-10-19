@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".UI.Checkout.CheckOutGlobalActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:text="@string/checkout"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            android:paddingBottom="10dp"
+            android:textColor="@color/colorPrimary"/>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtGlobalName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtGlobalPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:text="@string/address"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="10dp"
+            android:textColor="@color/colorPrimary"/>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/address">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtGlobalAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/country">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtGlobalCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/province">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtGlobalProvince"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/city">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtGlobalCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/postal_code">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtGlobalPostalCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/textGlobalTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:layout_marginTop="10dp"
+            android:text="@string/total_price"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGlobalCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/check_cart"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGlobalConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/proceed_checkout"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_marginBottom="26dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+<!--    @FormUrlEncoded-->
+<!--    @POST("product/checkout")-->
+<!--    Call<CheckoutGlobalResponse> checkOutGlobal(@Field("amount") String amount, //82105-->
+<!--    @Field("shippingType") String courier, // TIKI-->
+<!--    @Field("shippingFee") String shippingFee, //49861-->
+<!--    @Field("shippingMethod") String shippingMethod, //JNE City Courier Rp. 9000 ( 1-2 ) Hari-->
+<!--    @Field("jenis_order") String jenis_order, //LOCAL or GLOBAL-->
+<!--    @Field("negara") String negara, // ARAB-->
+<!--    @Field("provinsi") String provinsi, // RIYAD-->
+<!--    @Field("kota") String kota, // JEDDAH-->
+<!--    @Field("alamat") String alamat, // JL Salman Raya-->
+<!--    @Field("postal_code") String postal_code, // 19002-->
+<!--    @Field("phone") String phone); // +00129282892-->
+
+
+</ScrollView>

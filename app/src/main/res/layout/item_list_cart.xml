@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <ImageView
+        android:id="@+id/imageListMain"
+        android:layout_width="@dimen/_75sdp"
+        android:layout_height="@dimen/_75sdp"
+        android:contentDescription="@string/content_description"
+        android:src="@mipmap/ic_launcher"
+        android:layout_margin="5dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/textListMainName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            android:text="@string/item_name"/>
+        <TextView
+            android:id="@+id/textListMainPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:text="@string/item_price"
+            android:textColor="@color/colorPrimary"/>
+        <!--<TextView-->
+            <!--android:id="@+id/textListMainQuantity"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+            <!--android:text="Jumlah : 1"/>-->
+        <TextView
+            android:id="@+id/textListMainSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:text="@string/item_size"/>
+        <TextView
+            android:id="@+id/textListMainColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:text="@string/item_color"/>
+        <TextView
+            android:id="@+id/textListMainDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:text="@string/item_rent_day"/>
+    </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonListRemoveItem"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/remove"/>
+    </RelativeLayout>
+</LinearLayout>

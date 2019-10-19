@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".UI.Checkout.CheckOutActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:text="@string/checkout"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                android:paddingBottom="10dp"
+                android:textColor="@color/colorPrimary"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtCheckoutName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtCheckoutPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:text="@string/address"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/colorPrimary"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtCheckoutAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu">
+
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/dropdownCheckoutProvince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/select_province"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu">
+
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/dropdownCheckoutCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/select_city"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu">
+
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/dropdownCheckoutDistrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/select_district"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/dropdownCheckoutCourier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/select_courier"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/dropdownCheckoutCost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/select_cost"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textCheckoutOngkir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:layout_marginTop="10dp"
+                android:text="@string/total_cost"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+            <TextView
+                android:id="@+id/textCheckoutTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:text="@string/total_price"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCheckoutCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/check_cart"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCheckoutConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/proceed_checkout"
+                android:backgroundTint="@color/colorAccent"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginBottom="26dp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+<!--    /* CHECKOUT */-->
+<!--    @FormUrlEncoded-->
+<!--    @POST("product/checkout")-->
+<!--    Call<LocalCheckoutResponse> checkOutLocal(@Field("amount") String amount, //82105-->
+<!--    @Field("shippingType") String courier, // TIKI-->
+<!--    @Field("shippingFee") String shippingFee, //49861-->
+<!--    @Field("shippingMethod") String shippingMethod, //JNE City Courier Rp. 9000 ( 1-2 ) Hari-->
+<!--    @Field("jenis_order") String jenis_order, //LOCAL or GLOBAL-->
+<!--    @Field("provinceId") String provinceId, // 6-->
+<!--    @Field("cityId") String cityId, // 154-->
+<!--    @Field("address") String address); //pangeran st no 23-->
+
+</ScrollView>

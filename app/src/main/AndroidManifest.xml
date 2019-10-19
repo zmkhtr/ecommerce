@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.aflowz.ecommerce">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name=".Base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".UI.Checkout.TransferActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".UI.Checkout.ChooseCheckoutActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UI.Checkout.CheckOutGlobalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UI.Account.EditAccountActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".UI.MainActivity" />
+        <activity
+            android:name=".UI.History.DetailHistoryActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".UI.MainActivity" />
+        <activity android:name=".UI.Checkout.CheckOutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UI.ProductActivity.ProductActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.CartActivity.CartActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".UI.MainActivity" />
+        <activity
+            android:name=".UI.DetailActivity.DetailActivity"
+            android:parentActivityName=".UI.MainActivity" />
+        <activity android:name=".UI.LoginRegisterActivity.RegisterActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".UI.LoginRegisterActivity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UI.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UI.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".UI.Checkout.TransferActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/please_transfer_to_this_bank_account"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_account_number"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_owner_name"/>
+
+    <TextView
+        android:id="@+id/textTransferUniqueCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/unique_code"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+    <TextView
+        android:id="@+id/textTransferTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_price"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTransferBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_to_main_menu"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"/>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.CartActivity.CartActivity">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshCart"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/buttonCheckOut"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_above="@+id/buttonCheckOut"
+            android:id="@+id/recyclerViewCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_list_cart"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCheckOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:text="@string/item_price"
+        android:textColor="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/textCartEmptyItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/have_not_added_cart"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+</RelativeLayout>

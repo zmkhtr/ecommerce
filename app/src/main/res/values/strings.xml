@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">Bestari</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Search hint-->
+    <string name="search_product">Search Product</string>
+
+    <!--Main Feature-->
+    <string name="main_feature_sell">Sell</string>
+    <string name="main_feature_rent">Rent</string>
+    <string name="main_feature_pre_order">Pre-Order</string>
+
+    <!--Main Menu Title-->
+    <string name="main_title_promo">Promo</string>
+    <string name="main_title_categories">Categories</string>
+    <string name="main_title_new_product">New Product</string>
+
+    <!--Navigation Bar-->
+    <string name="nav_favorite">Favorite</string>
+    <string name="nav_history">History</string>
+    <string name="nav_account">Account</string>
+    <string name="nav_logout">Logout</string>
+    <string name="nav_home">Home</string>
+
+    <!--Login Activity String Data-->
+    <string name="cartListData">Cart</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_account_sign_up_here">Don\'t have account? Sign Up Here</string>
+
+    <!--Login Validation Hint-->
+    <string name="login_validate">Username or Password cannot be Empty</string>
+    <string name="login_success">Login Success</string>
+    <string name="login_fail">Login Fail</string>
+
+    <!--Register Activity String Data-->
+    <string name="e_mail">E-mail</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="register">Register</string>
+    <string name="already_have_and_account_login_here">Already have and account? Login here</string>
+    <string name="register_success">Register Success</string>
+    <string name="register_fail">Register Fail</string>
+    <string name="register_success_message">Please, Login to continue</string>
+    <string name="full_name">Full Name</string>
+
+    <!-- Content Description -->
+    <string name="content_description">Content Description</string>
+
+    <!-- Cart item String-->
+    <string name="item_name">item name</string>
+    <string name="item_price">item price</string>
+    <string name="item_size">item size</string>
+    <string name="item_color">item color</string>
+    <string name="remove">Remove</string>
+
+    <!-- Cart Detail String -->
+    <string name="select_color">Select color</string>
+    <string name="select_size">Select size</string>
+    <string name="button_minus">-</string>
+    <string name="button_plus">+</string>
+    <string name="item_count">1</string>
+
+    <!-- Cart List -->
+    <string name="item_rent_day">item rent day</string>
+
+    <!-- Profile String -->
+    <string name="profile">Profile</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="edit">Edit</string>
+    <string name="dummy_address">Perumahan mantap jiwa, jl wr supratman no 17 Jakarta, Depok, Jawabarat</string>
+    <string name="have_not_added_favorite">You haven\'t added an item to favorite yet</string>
+    <string name="have_not_added_cart">You haven\'t added an item to cart yet</string>
+    <string name="appbar_title">Your Cart</string>
+    <string name="empty_cart_toast">Please add an item first !</string>
+    <string name="not_add_address">You haven\'t add the address yet, click edit to add the address</string>
+    <string name="rent_price">(RENT) Open to look the price</string>
+
+    <!-- Checkout -->
+    <string name="select_province">Select Province</string>
+    <string name="select_city">Select City</string>
+    <string name="select_district">Select District</string>
+    <string name="select_courier">Select Courier</string>
+    <string name="choose_checkout">Choose Checkout</string>
+    <string name="local_checkout">Local Checkout</string>
+    <string name="global_checkout">Global Checkout</string>
+    <string name="proceed_checkout">Proceed Checkout</string>
+    <string name="total_cost">Ongkos Kirim : Rp 0,00</string>
+    <string name="total_price">Total : Rp 100.000,00</string>
+    <string name="checkout">Checkout :</string>
+    <string name="select_cost">Select Cost</string>
+    <string name="fill_blank">Please fill all the blank</string>
+    <string name="checkout_success">Checkout Success</string>
+    <string name="checkout_error">Checkout Error</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="check_cart">Check Cart</string>
+    <string name="country">Country</string>
+    <string name="province">Province</string>
+    <string name="city">City</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="back_to_main_menu">Back to main menu</string>
+    <string name="please_transfer_to_this_bank_account">Please Transfer to this Bank Account</string>
+    <string name="bank_name">Mandiri</string>
+    <string name="bank_account_number">90001230012398984</string>
+    <string name="bank_owner_name">a.n Owner Name</string>
+    <string name="unique_code">unique code :</string>
+
+</resources>

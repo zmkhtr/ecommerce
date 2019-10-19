@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UI.DetailActivity.DetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageDetailSliderView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300sdp"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="false"
+                app:sliderCircularHandlerEnabled="true"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="@color/colorPrimary"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1"
+                app:sliderStartAutoCycle="false" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textDetailNama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_name"
+                    android:layout_marginStart="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                <TextView
+                    android:id="@+id/textDetailHarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_price"
+                    android:layout_marginStart="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputDetailHari"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="5dp"
+                    app:endIconMode="dropdown_menu">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/dropdownDetailHari"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:hint="Rent Duration"
+                        android:focusable="false"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/buttonDetailFavorite"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_unlike"
+                android:layout_gravity="center"
+                android:padding="15dp"
+                android:contentDescription="@string/content_description"/>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:baselineAligned="false">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:endIconMode="dropdown_menu">
+
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/dropdownDetailUkuran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/select_size"
+                        android:focusable="false"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    app:endIconMode="dropdown_menu">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/dropdownDetailWarna"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/select_color"
+                        android:focusable="false"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp">
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="1dp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/buttonDetailMin"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:textColor="@color/white"
+                        android:text="@string/button_minus"/>
+                    <TextView
+                        android:id="@+id/textDetailValue"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/item_count"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/buttonDetailAdd"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:textColor="@color/white"
+                        android:layout_height="wrap_content"
+                        android:text="@string/button_plus"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:text="Product Description"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"/>
+            <TextView
+                android:id="@+id/textDetailDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:text="Product Description"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDetailAddToCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Add to Cart"
+        android:textColor="@color/colorPrimary"/>
+</LinearLayout>

@@ -20,6 +20,7 @@ public class SessionManager {
     private static final String USER_TOKEN = "userToken";
     private static final String USER_NAME = "userName";
     private static final String TOTAL_PRICE = "totalPrice";
+    private static final String USER_ROLE = "USER_ROLE";
 
     public static SessionManager getInstance() {
         if (singleTonInstance == null) {
@@ -40,7 +41,13 @@ public class SessionManager {
         editor.putString(TOTAL_PRICE, price);
         editor.commit();
     }
-
+    public void setRole(String role){
+        editor.putString(USER_ROLE, role);
+        editor.commit();
+    }
+    public String getRole() {
+        return pref.getString(USER_ROLE, "ADMIN");
+    }
 
     public void setLogin(boolean isLoggedIn, String userToken, String userName) {
         editor.putBoolean(KEY_IS_LOGGED_IN, isLoggedIn);

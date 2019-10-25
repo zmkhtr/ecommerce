@@ -1,14 +1,8 @@
 package com.aflowz.ecommerce.Network;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
 import android.text.TextUtils;
 
 import com.aflowz.ecommerce.Utils.SessionManager;
-import com.chuckerteam.chucker.api.ChuckerInterceptor;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;

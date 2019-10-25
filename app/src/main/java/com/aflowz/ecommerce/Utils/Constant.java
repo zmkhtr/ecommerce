@@ -11,4 +11,7 @@ public class Constant {
     public static final String CHECKOUT_KEY = "CHECKOUT_KEY";
     public static final String GLOBAL = "GLOBAL";
     public static final String LOCAL = "LOCAL";
+
+    public static final String ORDER_ID = "ORDER_ID";
+    public static final String ADMIN_KEY = "ADMIN_KEY";
 }

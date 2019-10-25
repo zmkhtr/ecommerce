@@ -1,15 +1,15 @@
 package com.aflowz.ecommerce.Network;
 
 
+import com.aflowz.ecommerce.Network.ResponseModel.ResponseAllOrder.AllOrderResponse;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseCart.CartAddResponse;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseCart.CartResponse;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseCategory.CategoryResponse;
-import com.aflowz.ecommerce.Network.ResponseModel.ResponseCheckout.CheckoutGlobalResponse;
-import com.aflowz.ecommerce.Network.ResponseModel.ResponseCheckout.LocalCheckoutResponse;
+import com.aflowz.ecommerce.Network.ResponseModel.ResponseCheckout.GlobalCheckOutResponse.CheckoutGlobalResponse;
+import com.aflowz.ecommerce.Network.ResponseModel.ResponseCheckout.LocalCheckoutResponse.LocalCheckoutResponse;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseFavorite.FavoriteAddResponse;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseFavorite.FavoriteResponse;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseLogin.LoginResponse;
-import com.aflowz.ecommerce.Network.ResponseModel.ResponseOrder.AllOrderResponse;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseOrder.DetailOrderResponse;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseOrder.EditOrderResponse;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseOrder.OrderResponse;
@@ -154,6 +154,7 @@ public interface ApiInterface {
     @GET("allorder")
     Call<AllOrderResponse> getAllOrder(@Query("page") int page);
 
+    @FormUrlEncoded
     @PUT("status/{id}")
     Call<EditOrderResponse> editOrder(@Path("id") int idOrder,
                                       @Field("status") String status,

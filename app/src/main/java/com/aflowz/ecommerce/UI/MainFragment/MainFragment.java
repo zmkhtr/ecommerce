@@ -55,8 +55,8 @@ public class MainFragment extends BaseFragment {
     private SliderMiniAdapter sliderMiniAdapter;
     private ProductAdapter productAdapter;
 
-    @BindView(R.id.shimmerMainLoading)
-    ShimmerFrameLayout shimmerFrameLayout;
+//    @BindView(R.id.shimmerMainLoading)
+//    ShimmerFrameLayout shimmerFrameLayout;
 
     @BindView(R.id.recyclerViewHomeSubCategories)
     RecyclerView recyclerViewCategories;
@@ -90,14 +90,14 @@ public class MainFragment extends BaseFragment {
         setRecyclerOnClick();
         setSlider();
 
-        if (AppDatabase.getProduct().isEmpty()) {
-            mCard.setVisibility(View.INVISIBLE);
-            shimmerFrameLayout.startShimmerAnimation();
-        } else if (!AppDatabase.getProduct().isEmpty()){
-            mCard.setVisibility(View.VISIBLE);
-            shimmerFrameLayout.stopShimmerAnimation();
-            shimmerFrameLayout.setVisibility(View.GONE);
-        }
+//        if (AppDatabase.getProduct().isEmpty()) {
+//            mCard.setVisibility(View.INVISIBLE);
+//            shimmerFrameLayout.startShimmerAnimation();
+//        } else if (!AppDatabase.getProduct().isEmpty()){
+//            mCard.setVisibility(View.VISIBLE);
+//            shimmerFrameLayout.stopShimmerAnimation();
+//            shimmerFrameLayout.setVisibility(View.GONE);
+//        }
     }
 
     private void setRecyclerOnClick(){

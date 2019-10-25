@@ -25,6 +25,10 @@
                 android:icon="@drawable/ic_menu_account"
                 android:title="@string/nav_account" />
             <item
+                android:id="@+id/nav_admin"
+                android:icon="@drawable/ic_key"
+                android:title="@string/admin" />
+            <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_menu_logout"
                 android:title="@string/nav_logout" />

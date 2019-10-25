@@ -17,21 +17,26 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".UI.Checkout.TransferActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".UI.Checkout.ChooseCheckoutActivity"
+        <activity android:name=".UI.Admin.AdminActivity"></activity>
+        <activity
+            android:name=".UI.Checkout.TransferActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".UI.Checkout.CheckOutGlobalActivity"
+        <activity
+            android:name=".UI.Checkout.ChooseCheckoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UI.Checkout.CheckOutGlobalActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".UI.Account.EditAccountActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".UI.MainActivity" />
+            android:parentActivityName=".UI.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UI.History.DetailHistoryActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".UI.MainActivity" />
-        <activity android:name=".UI.Checkout.CheckOutActivity"
+            android:parentActivityName=".UI.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UI.Checkout.CheckOutActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".UI.ProductActivity.ProductActivity"
@@ -39,16 +44,19 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UI.CartActivity.CartActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".UI.MainActivity" />
+            android:parentActivityName=".UI.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UI.DetailActivity.DetailActivity"
             android:parentActivityName=".UI.MainActivity" />
-        <activity android:name=".UI.LoginRegisterActivity.RegisterActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".UI.LoginRegisterActivity.LoginActivity"
+        <activity
+            android:name=".UI.LoginRegisterActivity.RegisterActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".UI.SplashActivity"
+        <activity
+            android:name=".UI.LoginRegisterActivity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UI.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,8 +66,8 @@
         </activity>
         <activity
             android:name=".UI.MainActivity"
-            android:screenOrientation="portrait"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

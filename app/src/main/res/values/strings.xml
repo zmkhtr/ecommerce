@@ -113,5 +113,7 @@
     <string name="bank_account_number">90001230012398984</string>
     <string name="bank_owner_name">a.n Owner Name</string>
     <string name="unique_code">unique code :</string>
+    <string name="your_order_history_will_appear_here">Your order History will appear here</string>
+    <string name="admin">Admin</string>
 
 </resources>

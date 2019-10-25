@@ -11,7 +11,8 @@ import android.widget.Toast;
 import com.aflowz.ecommerce.Base.BaseActivity;
 import com.aflowz.ecommerce.LocalDatabase.AppDatabase;
 import com.aflowz.ecommerce.Network.ApiNetwork;
-import com.aflowz.ecommerce.Network.ResponseModel.ResponseCheckout.LocalCheckoutResponse;
+import com.aflowz.ecommerce.Network.ResponseModel.ResponseCheckout.LocalCheckoutResponse.LocalCheckoutResponse;
+import com.aflowz.ecommerce.Network.ResponseModel.ResponseCheckout.LocalCheckoutResponse.Product;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseProfile.ProfileUserData;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseRajaOngkir.CityResponse;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseRajaOngkir.CostResponse;
@@ -67,6 +68,7 @@ public class CheckOutActivity extends BaseActivity {
 
     private String keyCourier;
     private String etd;
+    private String service;
     private int ongkir;
     private int province;
     private int city;
@@ -257,6 +259,7 @@ public class CheckOutActivity extends BaseActivity {
                             mCost.setOnItemClickListener((adapterView, view, i, l) -> {
                                 ongkir = response.body().getCosts().get(i).getCost().get(0).getValue();
                                 etd = response.body().getCosts().get(i).getCost().get(0).getEtd();
+                                service = response.body().getCosts().get(i).getService();
                                 Timber.d("ongkir %s", ongkir);
                                 Timber.d("etd %s", etd);
                                 int total = Integer.valueOf(SessionManager.getInstance().getPrice()) + response.body().getCosts().get(i).getCost().get(0).getValue();
@@ -279,7 +282,9 @@ public class CheckOutActivity extends BaseActivity {
 
     @OnClick(R.id.btnCheckoutConfirm)
     void checkOut() {
-        String shippingMethod = mCourier.getText().toString() + " " + ongkir + " " + etd + " Hari";
+        String shippingMethod = mCourier.getText().toString() + " (" + service + ") "
+                + "\n"+MainUtils.formatRupiah(String.valueOf(ongkir))
+                + " " + etd + " Hari";
         if (mName.getText().toString().trim().isEmpty() ||
                 mAddress.getText().toString().trim().isEmpty() ||
                 mPhone.getText().toString().trim().isEmpty() ||
@@ -311,12 +316,17 @@ public class CheckOutActivity extends BaseActivity {
                         if (response.isSuccessful()){
                             Toast.makeText(CheckOutActivity.this, R.string.checkout_success, Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(CheckOutActivity.this, TransferActivity.class);
-                            intent.putExtra(DETAIL_CHECKOUT,response.body());
+                            Product product = response.body().getProduct();
+                            Timber.d("Product gg %s", product.getTotalPrice());
+                            Timber.d("Product gg %s", product.getUniquePrice());
+                            intent.putExtra(DETAIL_CHECKOUT,product);
                             intent.putExtra(CHECKOUT_KEY, LOCAL);
+                            AppDatabase.deleteAllCart();
                             startActivity(intent);
                             finishAffinity();
+                        } else {
+                            Toast.makeText(CheckOutActivity.this, R.string.checkout_error, Toast.LENGTH_SHORT).show();
                         }
-                        Toast.makeText(CheckOutActivity.this, R.string.checkout_error, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override

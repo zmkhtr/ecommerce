@@ -10,6 +10,21 @@ public class ProductDataSourceFactory extends DataSource.Factory {
 
     private MutableLiveData<PageKeyedDataSource<Integer, ProductListDetailData>>
             pageKeyedDataSourceMutableLiveData = new MutableLiveData<>();
+
+    private String KEYWORD;
+    private String SUB_CATEGORY;
+    private String CATEGORY;
+    private String SORT;
+    private boolean RENT;
+
+//    public ProductDataSourceFactory(String KEYWORD, String SUB_CATEGORY, String CATEGORY, String SORT, boolean RENT) {
+//        this.KEYWORD = KEYWORD;
+//        this.SUB_CATEGORY = SUB_CATEGORY;
+//        this.CATEGORY = CATEGORY;
+//        this.SORT = SORT;
+//        this.RENT = RENT;
+//    }
+
     @Override
     public DataSource<Integer, ProductListDetailData> create() {
         ProductDataSource productListDetailData = new ProductDataSource();

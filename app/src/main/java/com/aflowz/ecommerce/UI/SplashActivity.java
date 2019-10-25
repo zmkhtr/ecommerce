@@ -10,6 +10,7 @@ import com.aflowz.ecommerce.Base.BaseActivity;
 import com.aflowz.ecommerce.LocalDatabase.AppDatabase;
 import com.aflowz.ecommerce.LocalDatabase.AppRepository;
 import com.aflowz.ecommerce.R;
+import com.aflowz.ecommerce.UI.History.DetailHistoryActivity;
 import com.aflowz.ecommerce.UI.LoginRegisterActivity.LoginActivity;
 import com.aflowz.ecommerce.Utils.SessionManager;
 

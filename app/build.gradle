@@ -85,7 +85,7 @@ dependencies {
     implementation "android.arch.paging:runtime:$paging_version"
 
     //step view
-    implementation 'com.anton46:stepsview:0.0.2'
+    implementation 'com.github.canner:android-stepsview:1.2'
 
     //chuck
     debugImplementation "com.github.ChuckerTeam.Chucker:library:3.0.1"

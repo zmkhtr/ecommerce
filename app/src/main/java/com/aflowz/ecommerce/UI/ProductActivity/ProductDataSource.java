@@ -17,12 +17,19 @@ import timber.log.Timber;
 public class ProductDataSource extends PageKeyedDataSource<Integer, ProductListDetailData> {
 
     private static final int FIRST_PAGE = 1;
-    static String KEYWORD;
-    static String SUB_CATEGORY;
-    static String CATEGORY;
-    static String SORT;
-    static boolean RENT;
+    private String KEYWORD;
+    private String SUB_CATEGORY;
+    private String CATEGORY;
+    private String SORT;
+    private boolean RENT;
 
+//    public ProductDataSource(String KEYWORD, String SUB_CATEGORY, String CATEGORY, String SORT, boolean RENT) {
+//        this.KEYWORD = KEYWORD;
+//        this.SUB_CATEGORY = SUB_CATEGORY;
+//        this.CATEGORY = CATEGORY;
+//        this.SORT = SORT;
+//        this.RENT = RENT;
+//    }
 
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull LoadInitialCallback<Integer, ProductListDetailData> callback) {

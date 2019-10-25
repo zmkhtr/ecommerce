@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.aflowz.ecommerce.Base.BaseActivity;
+import com.aflowz.ecommerce.UI.Admin.AdminActivity;
 import com.aflowz.ecommerce.UI.History.HistoryFragment;
 import com.aflowz.ecommerce.LocalDatabase.AppDatabase;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseProfile.ProfileUserData;
@@ -85,6 +86,13 @@ public class MainActivity extends BaseActivity
         mName = navigationView.getHeaderView(0).findViewById(R.id.navHeaderName);
         mImage = navigationView.getHeaderView(0).findViewById(R.id.navHeaderImage);
 
+        Menu nav_Menu = navigationView.getMenu();
+        if(true){
+            nav_Menu.findItem(R.id.nav_admin).setVisible(true);
+        } else {
+            nav_Menu.findItem(R.id.nav_admin).setVisible(false);
+        }
+
         EditText editText = toolbar.findViewById(R.id.edtSearchMain);
         editText.setImeActionLabel("Search", KeyEvent.KEYCODE_ENTER);
         editText.setOnEditorActionListener((textView, i, keyEvent) -> {
@@ -134,7 +142,7 @@ public class MainActivity extends BaseActivity
         ProfileUserData profileUserData = AppDatabase.getProfile(SessionManager.getInstance().getUserName());
 //        Timber.d("profile data %s", profileUserData.getName());
         mEmail.setText(profileUserData.getEmail());
-        mName.setText(profileUserData.getName());
+        mName.setText(profileUserData.getUsername());
         Glide.with(this)
                 .load(PROFILE_IMG_URL + profileUserData.getPhoto())
                 .apply(RequestOptions.circleCropTransform())
@@ -204,6 +212,8 @@ public class MainActivity extends BaseActivity
             SessionManager.getInstance().clearData();
             startActivity(new Intent(this, LoginActivity.class));
             finish();
+        } else if (id == R.id.nav_admin) {
+            startActivity(new Intent(this, AdminActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

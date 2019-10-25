@@ -1,7 +1,5 @@
 package com.aflowz.ecommerce.UI.Checkout;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -11,7 +9,8 @@ import android.widget.Toast;
 import com.aflowz.ecommerce.Base.BaseActivity;
 import com.aflowz.ecommerce.LocalDatabase.AppDatabase;
 import com.aflowz.ecommerce.Network.ApiNetwork;
-import com.aflowz.ecommerce.Network.ResponseModel.ResponseCheckout.CheckoutGlobalResponse;
+import com.aflowz.ecommerce.Network.ResponseModel.ResponseCheckout.GlobalCheckOutResponse.CheckoutGlobalResponse;
+import com.aflowz.ecommerce.Network.ResponseModel.ResponseCheckout.GlobalCheckOutResponse.Product;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseProfile.ProfileUserData;
 import com.aflowz.ecommerce.R;
 import com.aflowz.ecommerce.Utils.MainUtils;
@@ -26,7 +25,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.aflowz.ecommerce.Utils.Constant.CHECKOUT_KEY;
 import static com.aflowz.ecommerce.Utils.Constant.DETAIL_CHECKOUT;
+import static com.aflowz.ecommerce.Utils.Constant.GLOBAL;
 
 public class CheckOutGlobalActivity extends BaseActivity {
 
@@ -91,9 +92,9 @@ public class CheckOutGlobalActivity extends BaseActivity {
             showDialogLoading("Loading...");
             ApiNetwork.getApiInterface().checkOutGlobal(
                     SessionManager.getInstance().getPrice(),
-                    "TIKI",
+                    "GLOBAL CHECKOUT",
                     "99999",
-                    "JNE City Courier Rp. 9000 ( 1-2 ) Hari",
+                    "GLOBAL CHECKOUT",
                     "GLOBAL",
                     mCountry.getText().toString(),
                     mProvince.getText().toString(),
@@ -109,11 +110,15 @@ public class CheckOutGlobalActivity extends BaseActivity {
                     if (response.isSuccessful()){
                         Toast.makeText(CheckOutGlobalActivity.this, R.string.checkout_success, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(CheckOutGlobalActivity.this, TransferActivity.class);
-                        intent.putExtra(DETAIL_CHECKOUT,response.body());
+                        Product product = response.body().getProduct();
+                        intent.putExtra(DETAIL_CHECKOUT,product);
+                        intent.putExtra(CHECKOUT_KEY, GLOBAL);
+                        AppDatabase.deleteAllCart();
                         startActivity(intent);
                         finishAffinity();
+                    } else {
+                        Toast.makeText(CheckOutGlobalActivity.this, R.string.checkout_error, Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(CheckOutGlobalActivity.this, R.string.checkout_error, Toast.LENGTH_SHORT).show();
                 }
 
                 @Override

@@ -37,10 +37,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-import static com.aflowz.ecommerce.UI.ProductActivity.ProductDataSource.CATEGORY;
-import static com.aflowz.ecommerce.UI.ProductActivity.ProductDataSource.KEYWORD;
-import static com.aflowz.ecommerce.UI.ProductActivity.ProductDataSource.SORT;
-import static com.aflowz.ecommerce.UI.ProductActivity.ProductDataSource.SUB_CATEGORY;
 import static com.aflowz.ecommerce.Utils.Constant.PRODUCT_ID;
 
 public class ProductActivity extends BaseActivity {
@@ -249,11 +245,11 @@ public class ProductActivity extends BaseActivity {
 
     private void getRentProduct(String keyWord, String subCategory, String category, String sort) {
         Timber.d("Filter : " + keyWord + " " + subCategory + " " + category + " " + sort);
-        KEYWORD = keyWord;
-        SUB_CATEGORY = subCategory;
-        CATEGORY = category;
-        SORT = sort;
-        ProductDataSource.RENT = true;
+//        KEYWORD = keyWord;
+//        SUB_CATEGORY = subCategory;
+//        CATEGORY = category;
+//        SORT = sort;
+//        ProductDataSource.RENT = true;
 
         recyclerView.getRecycledViewPool().clear();
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -267,11 +263,11 @@ public class ProductActivity extends BaseActivity {
 
     private void getSellProduct(String keyWord, String subCategory, String category, String sort) {
         Timber.d("Filter : " + keyWord + " " + subCategory + " " + category + " " + sort);
-        KEYWORD = keyWord;
-        SUB_CATEGORY = subCategory;
-        CATEGORY = category;
-        SORT = sort;
-        ProductDataSource.RENT = false;
+//        KEYWORD = keyWord;
+//        SUB_CATEGORY = subCategory;
+//        CATEGORY = category;
+//        SORT = sort;
+//        ProductDataSource.RENT = false;
 
         recyclerView.getRecycledViewPool().clear();
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

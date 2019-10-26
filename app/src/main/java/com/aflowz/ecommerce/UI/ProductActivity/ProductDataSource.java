@@ -17,24 +17,16 @@ import timber.log.Timber;
 public class ProductDataSource extends PageKeyedDataSource<Integer, ProductListDetailData> {
 
     private static final int FIRST_PAGE = 1;
-    private String KEYWORD;
-    private String SUB_CATEGORY;
-    private String CATEGORY;
-    private String SORT;
-    private boolean RENT;
+    static String KEYWORD;
+    static String SUB_CATEGORY;
+    static String CATEGORY;
+    static String SORT;
+    static boolean RENT;
 
-//    public ProductDataSource(String KEYWORD, String SUB_CATEGORY, String CATEGORY, String SORT, boolean RENT) {
-//        this.KEYWORD = KEYWORD;
-//        this.SUB_CATEGORY = SUB_CATEGORY;
-//        this.CATEGORY = CATEGORY;
-//        this.SORT = SORT;
-//        this.RENT = RENT;
-//    }
 
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull LoadInitialCallback<Integer, ProductListDetailData> callback) {
-
-        Timber.d("Filter LoadInitial : " + KEYWORD + " " + SUB_CATEGORY + " " + CATEGORY + " " + SORT);
+        Timber.d("Filter LoadInitial : " + KEYWORD + " " + SUB_CATEGORY + " " + CATEGORY + " " + SORT + " " + RENT);
         if (RENT){
             ApiNetwork.getApiInterface().searchFilterProductsRent(FIRST_PAGE, KEYWORD, SUB_CATEGORY, CATEGORY, SORT)
                     .enqueue(new Callback<ProductListResponse>() {

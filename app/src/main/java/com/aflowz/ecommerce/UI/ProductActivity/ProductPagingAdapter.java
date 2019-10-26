@@ -74,7 +74,8 @@ public class ProductPagingAdapter extends PagedListAdapter<ProductListDetailData
                 .load(IMG_URL + MainUtils.cutImageUrl(productData.getImages()))
                 .placeholder(R.drawable.ic_broken_image)
                 .into(holder.mImage);
-        holder.itemView.setOnClickListener(v -> listener.onItemClick(productData));
+        Timber.d("MASASIH %s", productData.getId());
+        holder.itemView.setOnClickListener(v -> listener.onItemClick(productData.getId()));
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -88,12 +89,13 @@ public class ProductPagingAdapter extends PagedListAdapter<ProductListDetailData
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+
         }
     }
 
 
     public interface OnItemClick {
-        void onItemClick(ProductListDetailData productListData);
+        void onItemClick(int id);
     }
 
     void setOnItemClickListener(OnItemClick listener) {

@@ -75,14 +75,14 @@ public class ProductActivity extends BaseActivity {
         setContentView(R.layout.activity_product);
         ButterKnife.bind(this);
 
-        Intent intentKey;
-        intentKey = getIntent();
+        Intent intentKey = getIntent();
 
         productKey = intentKey.getStringExtra(PRODUCT_KEY);
         query = intentKey.getStringExtra(QUERY_KEY);
         categoryKey = intentKey.getStringExtra(CATEGORY_KEY);
         subCategory = intentKey.getStringExtra(SUB_CATEGORY_KEY);
 
+        Timber.d("Filter query %s", query);
 //        getSellProduct();
         decideList();
         setFilter();
@@ -104,13 +104,7 @@ public class ProductActivity extends BaseActivity {
             decideList();
             return true;
         });
-        productAdapter.setOnItemClickListener(productListData -> {
-            Timber.d("product clicked%s", productListData);
-            Intent intent = new Intent(this, DetailActivity.class);
-            intent.putExtra(PRODUCT_ID, productListData.getId());
-            intent.putExtra(PRODUCT_KEY, productKey);
-            startActivity(intent);
-        });
+
     }
 
     private void setFilter() {
@@ -245,11 +239,11 @@ public class ProductActivity extends BaseActivity {
 
     private void getRentProduct(String keyWord, String subCategory, String category, String sort) {
         Timber.d("Filter : " + keyWord + " " + subCategory + " " + category + " " + sort);
-//        KEYWORD = keyWord;
-//        SUB_CATEGORY = subCategory;
-//        CATEGORY = category;
-//        SORT = sort;
-//        ProductDataSource.RENT = true;
+        ProductDataSource.KEYWORD = keyWord;
+        ProductDataSource.SUB_CATEGORY = subCategory;
+        ProductDataSource.CATEGORY = category;
+        ProductDataSource.SORT = sort;
+        ProductDataSource.RENT = true;
 
         recyclerView.getRecycledViewPool().clear();
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -257,26 +251,50 @@ public class ProductActivity extends BaseActivity {
         productAdapter = new ProductPagingAdapter(this);
         recyclerView.setAdapter(productAdapter);
         productViewModel = ViewModelProviders.of(this).get(ProductViewModel.class);
+
         productViewModel.pagedListLiveData.observe(this, productListDetailData -> productAdapter.submitList(productListDetailData));
+        if (productAdapter.getItemCount() > 0){
+            Timber.d("Filter not null" );
+            productViewModel.refresh();
+        }
         recyclerView.setAdapter(productAdapter);
+
+        productAdapter.setOnItemClickListener(productListData -> {
+            Timber.d("product clicked%s", productListData);
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra(PRODUCT_ID, productListData);
+            intent.putExtra(PRODUCT_KEY, productKey);
+            startActivity(intent);
+        });
     }
 
     private void getSellProduct(String keyWord, String subCategory, String category, String sort) {
         Timber.d("Filter : " + keyWord + " " + subCategory + " " + category + " " + sort);
-//        KEYWORD = keyWord;
-//        SUB_CATEGORY = subCategory;
-//        CATEGORY = category;
-//        SORT = sort;
-//        ProductDataSource.RENT = false;
+        ProductDataSource.KEYWORD = keyWord;
+        ProductDataSource.SUB_CATEGORY = subCategory;
+        ProductDataSource.CATEGORY = category;
+        ProductDataSource.SORT = sort;
+        ProductDataSource.RENT = false;
 
-        recyclerView.getRecycledViewPool().clear();
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setHasFixedSize(true);
         productAdapter = new ProductPagingAdapter(this);
-        recyclerView.setAdapter(productAdapter);
         productViewModel = ViewModelProviders.of(this).get(ProductViewModel.class);
-        productViewModel.pagedListLiveData.hasActiveObservers();
-        productViewModel.pagedListLiveData.observe(this, productListDetailData -> productAdapter.submitList(productListDetailData));
 
+        productViewModel.pagedListLiveData.observe(this, productListDetailData -> productAdapter.submitList(productListDetailData));
+        Timber.d("Filter item count %s", productAdapter.getItemCount());
+        if (productAdapter.getItemCount() > 0){
+            Timber.d("Filter not null" );
+            productViewModel.refresh();
+        }
+        recyclerView.setAdapter(productAdapter);
+
+        productAdapter.setOnItemClickListener(productListData -> {
+            Timber.d("product clicked%s", productListData);
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra(PRODUCT_ID, productListData);
+            intent.putExtra(PRODUCT_KEY, productKey);
+            startActivity(intent);
+        });
     }
 }

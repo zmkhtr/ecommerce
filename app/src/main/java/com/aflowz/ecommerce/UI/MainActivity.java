@@ -99,10 +99,10 @@ public class MainActivity extends BaseActivity
             Timber.d("onEditorAction: pressed ");
             Intent intent = new Intent(MainActivity.this, ProductActivity.class);
             intent.putExtra(QUERY_KEY, editText.getText().toString());
+            Timber.d("Filter qq %s", editText.getText().toString());
             intent.putExtra(PRODUCT_KEY, "SALE");
             intent.putExtra(CATEGORY_KEY, "");
             intent.putExtra(SUB_CATEGORY_KEY, "");
-            intent.putExtra(QUERY_KEY, "");
             startActivity(intent);
             return true;
         });

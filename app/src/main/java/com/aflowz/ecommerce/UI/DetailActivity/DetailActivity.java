@@ -172,7 +172,7 @@ public class DetailActivity extends BaseActivity implements DetailContract.View{
     }
 
     private void displayValue(int x) {
-        if(x < 1){
+        if(x == 1){
             mQuantity.setText(String.valueOf(1));
         } else{
             mQuantity.setText(String.valueOf(x));

@@ -60,6 +60,8 @@ public class AdminActivity extends BaseActivity implements SwipeRefreshLayout.On
 
     private void setRecyclerView(){
         LinearLayoutManager layoutManagerProduct = new LinearLayoutManager(this);
+        layoutManagerProduct.setStackFromEnd(true);
+        layoutManagerProduct.setReverseLayout(true);
         recyclerView.setLayoutManager(layoutManagerProduct);
         recyclerView.setHasFixedSize(true);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,
@@ -67,6 +69,7 @@ public class AdminActivity extends BaseActivity implements SwipeRefreshLayout.On
         adminPagingAdapter = new AdminPagingAdapter(this);
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setAdapter(adminPagingAdapter);
+        recyclerView.smoothScrollToPosition(adminPagingAdapter.getItemCount());
         adminViewModel = ViewModelProviders.of(this).get(AdminViewModel.class);
         adminViewModel.pagedListLiveData.observe(this, productListDetailData -> {
             adminPagingAdapter.submitList(productListDetailData);

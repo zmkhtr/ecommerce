@@ -39,22 +39,23 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/phone">
+                android:hint="@string/e_mail">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtEditPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"/>
+                    android:inputType="textEmailAddress"/>
 
             </com.google.android.material.textfield.TextInputLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="7"
-                android:text="@string/address"
+                android:text="Password"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:layout_marginBottom="10dp"
                 android:paddingTop="10dp"
                 android:textColor="@color/colorPrimary"/>
@@ -62,6 +63,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:hint="@string/address">
 
                 <com.google.android.material.textfield.TextInputEditText

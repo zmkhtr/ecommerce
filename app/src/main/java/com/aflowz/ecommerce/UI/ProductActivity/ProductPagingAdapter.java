@@ -94,6 +94,7 @@ public class ProductPagingAdapter extends PagedListAdapter<ProductListDetailData
     }
 
 
+
     public interface OnItemClick {
         void onItemClick(int id);
     }

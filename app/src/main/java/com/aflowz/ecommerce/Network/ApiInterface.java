@@ -48,7 +48,7 @@ public interface ApiInterface {
     Call<ProductListResponse> searchFilterProducts(
             @Query("page") int page,
             @Field("keyword") String keyword,
-            @Field("subcategory") String subcategory,
+            @Field("subCategory") String subcategory,
             @Field("category") String category,
             @Field("sort") String sort);
 
@@ -120,7 +120,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @PUT("profile/update")
-    Call<ResponseBody> updateProfile(@Field("name") String name, @Field("phone") String phone, @Field("address") String address);
+    Call<ResponseBody> updateProfile(@Field("name") String name, @Field("email") String email, @Field("address") String address);
 
     /* CATEGORY */
     @GET("category/product")

@@ -87,10 +87,10 @@ public class MainActivity extends BaseActivity
         mImage = navigationView.getHeaderView(0).findViewById(R.id.navHeaderImage);
 
         Menu nav_Menu = navigationView.getMenu();
-        if(true){
-            nav_Menu.findItem(R.id.nav_admin).setVisible(true);
-        } else {
+        if(SessionManager.getInstance().getRole().equals("USER")){
             nav_Menu.findItem(R.id.nav_admin).setVisible(false);
+        } else {
+            nav_Menu.findItem(R.id.nav_admin).setVisible(true);
         }
 
         EditText editText = toolbar.findViewById(R.id.edtSearchMain);

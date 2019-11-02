@@ -40,7 +40,7 @@ public class EditAccountActivity extends BaseActivity implements AccountContract
         ProfileUserData profileUserData = AppDatabase.getProfile(SessionManager.getInstance().getUserName());
         mName.setText(profileUserData.getName());
         mAddress.setText(profileUserData.getAddress());
-        mPhone.setText(profileUserData.getPhone());
+        mPhone.setText(profileUserData.getEmail());
     }
 
 

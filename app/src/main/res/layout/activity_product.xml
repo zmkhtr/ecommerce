@@ -37,6 +37,19 @@
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appbar">
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/tabLayoutContainer"
+        android:layout_below="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:layout_above="@id/filterLayout"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/appbar"
         android:id="@+id/recyclerViewProduct"
@@ -60,7 +73,6 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:visibility="gone"
             app:endIconMode="dropdown_menu">
 
 

@@ -4,34 +4,31 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aflowz.ecommerce.Base.BaseActivity;
 import com.aflowz.ecommerce.LocalDatabase.AppDatabase;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseCategory.CategoryData;
-import com.aflowz.ecommerce.Network.ResponseModel.ResponseProductList.ProductListDetailData;
 import com.aflowz.ecommerce.Network.ResponseModel.ResponseSubCategory.SubCategoryData;
 import com.aflowz.ecommerce.R;
 import com.aflowz.ecommerce.UI.CartActivity.CartActivity;
 import com.aflowz.ecommerce.UI.DetailActivity.DetailActivity;
-import com.aflowz.ecommerce.UI.MainActivity;
+import com.google.android.material.tabs.TabLayout;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,8 +45,6 @@ public class ProductActivity extends BaseActivity {
     TextView textCartItemCount;
     int mCartItemCount;
 
-    ProductPagingAdapter productAdapter;
-    ProductViewModel productViewModel;
 
     @BindView(R.id.recyclerViewProduct)
     RecyclerView recyclerView;
@@ -67,7 +62,15 @@ public class ProductActivity extends BaseActivity {
     AutoCompleteTextView mSubCategory;
 
     EditText mSearch;
-    String productKey, query, categoryKey, subCategory, sort;
+    public static String query, categoryKey, subCategory, sort;
+    public static String fragmentKey;
+    public static String productKey;
+
+    @BindView(R.id.tabLayout)
+    TabLayout tabLayout;
+    @BindView(R.id.tabLayoutContainer)
+    ViewPager viewPager;
+    TabAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,9 +105,22 @@ public class ProductActivity extends BaseActivity {
             Timber.d("onEditorAction: pressed ");
             query = mSearch.getText().toString();
             decideList();
+//            MenFragment fragment = (MenFragment) adapter.getItem(0);
+//            fragment.decideList();
             return true;
         });
 
+//        setTabs();
+    }
+
+
+
+    private void setTabs(){
+        adapter = new TabAdapter(getSupportFragmentManager());
+        adapter.addFragment(new MenFragment(), getString(R.string.tab_title_men));
+        adapter.addFragment(new WomenFragment(), getString(R.string.tab_title_women));
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     private void setFilter() {
@@ -127,7 +143,10 @@ public class ProductActivity extends BaseActivity {
         mCategory.setAdapter(adapterSize);
 
         mCategory.setOnItemClickListener((adapterView, view, i, l) -> {
+            query = mSearch.getText().toString();
             categoryKey = mCategory.getText().toString();
+            subCategory = mSubCategory.getText().toString();
+            sort = mSort.getText().toString();
             decideList();
         });
 
@@ -148,7 +167,10 @@ public class ProductActivity extends BaseActivity {
         mSubCategory.setAdapter(adapterSize1);
 
         mSubCategory.setOnItemClickListener((adapterView, view, i, l) -> {
+            query = mSearch.getText().toString();
+            categoryKey = mCategory.getText().toString();
             subCategory = mSubCategory.getText().toString();
+            sort = mSort.getText().toString();
             decideList();
         });
 
@@ -166,6 +188,9 @@ public class ProductActivity extends BaseActivity {
         mSort.setAdapter(adapterSize2);
 
         mSort.setOnItemClickListener((adapterView, view, i, l) -> {
+            query = mSearch.getText().toString();
+            categoryKey = mCategory.getText().toString();
+            subCategory = mSubCategory.getText().toString();
             sort = mSort.getText().toString();
             decideList();
         });
@@ -245,6 +270,8 @@ public class ProductActivity extends BaseActivity {
         ProductDataSource.SORT = sort;
         ProductDataSource.RENT = true;
 
+        ProductPagingAdapter productAdapter;
+        ProductViewModel productViewModel;
         recyclerView.getRecycledViewPool().clear();
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setHasFixedSize(true);
@@ -252,7 +279,7 @@ public class ProductActivity extends BaseActivity {
         recyclerView.setAdapter(productAdapter);
         productViewModel = ViewModelProviders.of(this).get(ProductViewModel.class);
 
-        productViewModel.pagedListLiveData.observe(this, productListDetailData -> productAdapter.submitList(productListDetailData));
+        productViewModel.pagedListLiveData.observe(this, productAdapter::submitList);
         if (productAdapter.getItemCount() > 0){
             Timber.d("Filter not null" );
             productViewModel.refresh();
@@ -276,17 +303,23 @@ public class ProductActivity extends BaseActivity {
         ProductDataSource.SORT = sort;
         ProductDataSource.RENT = false;
 
+        ProductPagingAdapter productAdapter;
+        ProductViewModel productViewModel;
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setHasFixedSize(true);
         productAdapter = new ProductPagingAdapter(this);
         productViewModel = ViewModelProviders.of(this).get(ProductViewModel.class);
 
-        productViewModel.pagedListLiveData.observe(this, productListDetailData -> productAdapter.submitList(productListDetailData));
-        Timber.d("Filter item count %s", productAdapter.getItemCount());
+        productViewModel.pagedListLiveData.observe(this, productAdapter::submitList);
+//        Timber.d("Filter item count %s", productAdapter.getItemCount());
         if (productAdapter.getItemCount() > 0){
             Timber.d("Filter not null" );
             productViewModel.refresh();
         }
+
+//        productViewModel.refresh();
+
+//        productViewModel.pagedListLiveData.observe(this, productAdapter::submitList);
         recyclerView.setAdapter(productAdapter);
 
         productAdapter.setOnItemClickListener(productListData -> {

@@ -35,6 +35,7 @@ public class AppRepository {
                         if (response.isSuccessful()){
                             if (response.body() != null) {
                                 AppDatabase.addProfile(response.body().getProfileUserData());
+                                SessionManager.getInstance().setRole(response.body().getProfileUserData().getRole());
                                 Timber.d("profile %s", response.body().getProfileUserData().getName());
                             }
                             MainUtils.logSuccessMessage("Success Get Profile");

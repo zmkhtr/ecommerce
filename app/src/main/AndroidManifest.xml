@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".UI.Admin.AdminActivity"></activity>
+        <activity android:name=".UI.SpecialRequestActivity"></activity>
+        <activity android:name=".UI.Admin.AdminActivity" />
         <activity
             android:name=".UI.Checkout.TransferActivity"
             android:screenOrientation="portrait" />

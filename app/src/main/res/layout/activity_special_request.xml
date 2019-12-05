@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".UI.SpecialRequestActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spesial Request"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        />
+
+    <EditText
+        android:id="@+id/edtSpecialMessage"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:hint="Bagaimana kebutuhan anda?"
+        android:inputType="textMultiLine"
+        android:layout_height="160dp"
+        android:gravity="left|top"
+        />
+    <Button
+        android:id="@+id/btnSpecialSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Kirim"/>
+</LinearLayout>
+</ScrollView>

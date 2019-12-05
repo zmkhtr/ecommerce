@@ -24,6 +24,7 @@ import com.aflowz.ecommerce.UI.MainFragment.Adapter.ProductAdapter;
 import com.aflowz.ecommerce.UI.MainFragment.Adapter.SliderMiniAdapter;
 import com.aflowz.ecommerce.UI.MainFragment.Adapter.SubCategoryAdapter;
 import com.aflowz.ecommerce.UI.ProductActivity.ProductActivity;
+import com.aflowz.ecommerce.UI.SpecialRequestActivity;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -172,7 +173,8 @@ public class MainFragment extends BaseFragment {
 
     @OnClick(R.id.textHomePreOrder)
     void onPreOrderClick() {
-        Toast.makeText(getContext(), "Not implemented yet", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), SpecialRequestActivity.class);
+        startActivity(intent);
     }
 
 }

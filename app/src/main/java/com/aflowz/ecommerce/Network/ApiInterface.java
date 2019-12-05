@@ -202,4 +202,9 @@ public interface ApiInterface {
                                                 @Field("phone") String phone); // +00129282892
 
 
+    /* SPECIAL REQUEST */
+    @FormUrlEncoded
+    @POST("special-request")
+    Call<ResponseBody> sendSpecialRequest(@Field("msg") String message);
+
 }

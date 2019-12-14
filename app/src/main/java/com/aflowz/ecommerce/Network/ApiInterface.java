@@ -112,7 +112,9 @@ public interface ApiInterface {
                                       @Field("username") String username,
                                       @Field("email") String email,
                                       @Field("password") String password,
-                                      @Field("c_password") String RePassword);
+                                      @Field("c_password") String RePassword,
+                                      @Field("phone") String phone,
+                                      @Field("sosmed") String socialMedia);
 
     /* PROFILE */
     @GET("profile")

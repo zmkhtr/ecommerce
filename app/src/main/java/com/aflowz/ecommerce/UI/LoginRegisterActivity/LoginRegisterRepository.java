@@ -45,9 +45,9 @@ public class LoginRegisterRepository implements LoginRegisterContract.GetLoginRe
     }
 
     @Override
-    public void proceedRegister(OnFinishedListener onFinishedListener, String name, String username, String email, String password, String rePassword) {
+    public void proceedRegister(OnFinishedListener onFinishedListener, String name, String username, String email, String password, String rePassword, String phone, String socialMedia) {
         Timber.d("Register nih");
-        ApiNetwork.getApiInterface().doRegister(name, username, email, password, rePassword)
+        ApiNetwork.getApiInterface().doRegister(name, username, email, password, rePassword, phone, socialMedia)
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(@NonNull Call<RegisterResponse> call,@NonNull Response<RegisterResponse> response) {

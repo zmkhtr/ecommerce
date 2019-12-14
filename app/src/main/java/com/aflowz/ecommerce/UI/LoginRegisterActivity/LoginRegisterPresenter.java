@@ -20,12 +20,14 @@ public class LoginRegisterPresenter implements LoginRegisterContract.Presenter, 
     }
 
     @Override
-    public void doRegister(String name, String username, String email, String password, String rePassword) {
+    public void doRegister(String name, String username, String email, String password, String rePassword, String phone, String socialMedia) {
         if (view != null) {
-            loginRegisterRepository.proceedRegister(this, name, username, email, password, rePassword);
+            loginRegisterRepository.proceedRegister(this, name, username, email, password, rePassword, phone, socialMedia);
             view.showLoading();
         }
     }
+
+
 
     @Override
     public void onSuccess(String message) {

@@ -30,6 +30,10 @@ public class RegisterActivity extends BaseActivity implements LoginRegisterContr
     EditText mRePassword;
     @BindView(R.id.edtRegisterUserName)
     EditText mUsername;
+    @BindView(R.id.edtRegisterPhone)
+    EditText mPhone;
+    @BindView(R.id.edtRegisterSocialMedia)
+    EditText mSocialMedia;
     @BindView(R.id.loaderRegisterProgress)
     AVLoadingIndicatorView mLoading;
 
@@ -57,6 +61,8 @@ public class RegisterActivity extends BaseActivity implements LoginRegisterContr
         String fullName = mFullName.getText().toString().trim();
         String password = mPassword.getText().toString().trim();
         String rePassword = mRePassword.getText().toString().trim();
+        String phone = mPhone.getText().toString().trim();
+        String socialMedia = mSocialMedia.getText().toString().trim();
         if (name.isEmpty() || email.isEmpty() || fullName.isEmpty() || password.isEmpty() || rePassword.isEmpty()) {
             Toast.makeText(this, "Please fill all the form, first", Toast.LENGTH_SHORT).show();
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -66,7 +72,7 @@ public class RegisterActivity extends BaseActivity implements LoginRegisterContr
         } else if (!rePassword.equals(password)) {
             mRePassword.setError("Password not same");
         } else if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            presenter.doRegister(fullName, name, email, password, rePassword);
+            presenter.doRegister(fullName, name, email, password, rePassword, phone, socialMedia);
         }
     }
 

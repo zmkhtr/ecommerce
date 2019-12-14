@@ -2,7 +2,7 @@ package com.aflowz.ecommerce.Utils;
 
 public class Constant {
     public static final String BASE_URL = "http://bestari.subicorp.com/api/";
-    public static final String IMG_URL = "http://bestari.subicorp.com/storage/products/";
+    public static final String IMG_URL = "http://bestari.subicorp.com/storage/";
     public static final String PROFILE_IMG_URL = "http://bestari.subicorp.com/storage/";
     public static final String DB_NAME = "E_COMMERCE_DB";
     public static final String PRODUCT_ID = "PRODUCT_ID";

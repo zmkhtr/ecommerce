@@ -16,13 +16,13 @@ public interface LoginRegisterContract {
             void onError(String message, Throwable e);
         }
         void proceedLogin(OnFinishedListener onFinishedListener, String username, String password);
-        void proceedRegister(OnFinishedListener onFinishedListener, String name, String username, String email, String password, String rePassword);
+        void proceedRegister(OnFinishedListener onFinishedListener, String name, String username, String email, String password, String rePassword, String phone, String socialMedia);
     }
 
 
     interface Presenter extends BaseContract.BasePresenter{
         void doLogin(String username, String password);
-        void doRegister(String name, String username, String email, String password, String rePassword);
+        void doRegister(String name, String username, String email, String password, String rePassword, String phone, String socialMedia);
     }
 
 }
